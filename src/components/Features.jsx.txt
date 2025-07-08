@@ -1,0 +1,37 @@
+export default function Features() {
+  return (
+    <section className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <h3 className="text-2xl sm:text-3xl font-bold text-center text-white mb-10">How FarmTap Works</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md text-center transform transition-all duration-300 hover:scale-105">
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-2">Create Your Profile</h4>
+          <p className="text-gray-600">Sign up as a farmer and showcase your farm details.</p>
+        </div>
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md text-center transform transition-all duration-300 hover:scale-105">
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-2">List Your Farms</h4>
+          <p className="text-gray-600">Add multiple farms and share what you grow.</p>
+        </div>
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md text-center transform transition-all duration-300 hover:scale-105">
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-2">Connect Locally</h4>
+          <p className="text-gray-600">Consumers find nearby farms and enjoy fresh food.</p>
+        </div>
+      </div>
+    </section>
+  );
+}

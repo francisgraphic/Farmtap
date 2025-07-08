@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+export default function Hero() {
+  const [address, setAddress] = useState('');
+  const [useLocation, setUseLocation] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleFindFarm = () => {
+    if (!useLocation && !address.trim()) {
+      setError('Please enter an address or enable location access.');
+      return;
+    }
+    alert(`Finding farms ${useLocation ? 'near your current location' : `near "${address}"`}`);
+    setError('');
+  };
+
+  return (
+    <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+        Discover Fresh Farms Around You
+      </h2>
+      <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto mb-10 opacity-90 drop-shadow-md">
+        Connect with local farmers, explore fresh produce, and support sustainable agriculture in your community.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <Link to="/register-farmer" className="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500">
+          Create Farmer Profile
+        </Link>
+        <Link to="/search-farms" className="bg-lime-500 hover:bg-lime-600 text-white font-medium py-3 px-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-400">
+          Find Nearby Farms
+        </Link>
+      </div>
+
+      <div className="mt-8 p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg max-w-3xl mx-auto">
+        <p className="text-gray-700 mb-4 font-semibold">Or search by address:</p>
+        <label className="flex items-center space-x-2 mb-4">
+          <input
+            type="checkbox"
+            checked={useLocation}
+            onChange={(e) => setUseLocation(e.target.checked)}
+            className="rounded text-green-600 focus:ring-green-500"
+          />
+          <span>Use my current location</span>
+        </label>
+        {!useLocation && (
+          <div className="flex flex-col sm:flex-row gap-2">
+            <input
+              type="text"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Enter your address"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+            <button
+              onClick={handleFindFarm}
+              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
+            >
+              Search
+            </button>
+          </div>
+        )}
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+      </div>
+    </main>
+  );
+}

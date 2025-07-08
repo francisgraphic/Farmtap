@@ -1,0 +1,22 @@
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Footer from './components/Footer';
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: "url('https://placehold.co/1920x1080/2d5f2c/ffffff?text=FarmTap')"
+    }}>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-white/90"></div>
+      
+      <div className="relative z-10">
+        <Header />
+        <Hero />
+        <Features />
+        <Footer />
+      </div>
+    </div>
+  );
+}
